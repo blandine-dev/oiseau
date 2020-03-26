@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block monTitre %}Article {{oiseau.nom}}{% endblock %}
+
+{% block body %}
+<div class="row">
+    
+        <div class="col-12">
+            <div class="card border-primary mb-3 mx-auto" style ="max-width:60rem">
+            <div class="card-header text-center bg-warning text-white">
+                <h5 class='card-title text-center pb-2 mx3 border-bottom border-white'>{{oiseau.nom}}</h5>
+                
+            </div>
+            <div class="card-body">
+                <img src="{{asset('images/' ~ oiseau.image)}}" class="perso_imgOiseauArt card-img-top">
+                <p>{{oiseau.description}}</p>
+            </div>
+        </div>
+        </div>
+    
+    </div>
+
+{% endblock %}

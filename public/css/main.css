@@ -1,0 +1,23 @@
+.perso_imgOiseau {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.perso_imgOiseauArt {
+    height: 450px;
+    width: 450px;
+    object-fit: cover;
+}
+
+.perso_imgHome {
+    height: 450px;
+    width: 450px;
+    object-fit: cover;
+}
+
+.perso_imgOiseauAdmin {
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+}

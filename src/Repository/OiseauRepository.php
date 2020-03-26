@@ -19,6 +19,16 @@ class OiseauRepository extends ServiceEntityRepository
         parent::__construct($registry, Oiseau::class);
     }
 
+    public function getOiseauxParPropriete($propriete, $signe, $lieu) {
+        return $this->createQueryBuilder('o')
+        ->andWhere('o.'.$propriete.' ' .$signe. ':val')
+        ->setParameter('val', $lieu)
+        ->orderBy('o.id', 'DESC')
+        ->getQuery()
+        ->getResult()
+    ;
+    }
+
     // /**
     //  * @return Oiseau[] Returns an array of Oiseau objects
     //  */

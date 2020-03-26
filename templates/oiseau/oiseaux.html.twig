@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block monTitre %}Recherche{% endblock %}
+{% block body %}
+<div class="row text-center">
+    
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="dropdown mb-5">
+                <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Localisation
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "lacs et rivières"})}}">Lacs et rivières</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "jardins et zones construites"})}}">Jardins et zones construites</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "fôret"})}}">Forêt et campagne</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "ocean"})}}">Mers et océans</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="dropdown mb-5">
+                <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Mode de Vie
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{{path('oiseauxParVie', {"vie": "sédentaire"})}}">Sédentaires</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParVie', {"vie": "migrateur"})}}">Migrateurs</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="dropdown mb-5">
+                <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Alimentation
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "granivore"})}}">Granivores</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "piscivore"})}}">Piscivores</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "insectivore"})}}">Insectivores</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "carnivore"})}}">Carnivores</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "omnivore"})}}">Omnivores</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <a href="{{path('oiseauxTous')}}" class="btn btn-warning">Tous les oiseaux</a>
+        </div>
+    </div>  
+
+
+{% endblock %}

@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/sandstone/bootstrap.min.css">
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -18,7 +19,7 @@
                     <a class="nav-link" href="{{path('home')}}">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Recherche</a>
+                    <a class="nav-link" href="{{path('oiseaux')}}">Recherche</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{path('apropos')}}">A Propos</a>
