@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+{% block monTitre %}Page d'administration{% endblock %}
+
+
+{% block body %}
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{message}}
+    </div>
+{% endfor %}
+<a href="{{path('admin_oiseau_creation')}}" class="btn btn-success mb-3 ml-3">Ajouter</a>
+<table class="table mx-3">
+    <tr class="table-primary">
+        <td>Image</td>
+        <td>Nom</td>
+        <td>Description</td>
+        <td>Localisation</td>
+        <td>Mode de vie</td>
+        <td>Alimentation</td>
+        <td>Actions</td>
+    </tr>
+    {% for oiseau in oiseaux %}
+        <tr>
+            <td><img src="{{asset('images/' ~ oiseau.image)}}"  class="perso_imgOiseauAdmin" alt=""></td>
+            <td><stong>{{oiseau.nom}}</stong></td>
+            <td>{{oiseau.description}}</td>
+            <td>{{oiseau.lieu}}</td>
+            <td>{{oiseau.vie}}</td>
+            <td>{{oiseau.alimentation}}</td>
+            <td><a class="btn btn-success" href="{{path('admin_oiseau_modification', {'id' : oiseau.id})}}">Modifier</a>
+                <form method="POST" style="display:inline-block" action="{{path('admin_oiseau_suppression', {'id' : oiseau.id})}}">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ oiseau.id)}}">
+                    <input type="submit" class="btn btn-danger" value="Supprimer" onsubmit="return confirm ('Confirmez-vous la suppression?')">
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

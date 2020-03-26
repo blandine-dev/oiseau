@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OiseauRepository")
@@ -18,6 +19,7 @@ class Oiseau
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=3, max=25, minMessage="Le nom doit faire plus de 3 caractères", maxMessage="Le nom doit faire moins de 25 caratères")
      */
     private $nom;
 
