@@ -2,11 +2,16 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OiseauRepository")
+ * @Vich\Uploadable
  */
 class Oiseau
 {
@@ -29,6 +34,32 @@ class Oiseau
     private $image;
 
     /**
+     * @Vich\UploadableField(mapping="oiseau_image", fileNameProperty="image")
+     */
+    private $imageFile;
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $imageFile = null): self
+    {
+        $this->imageFile = $imageFile;
+
+        if($this->imageFile instanceof UploadedFile){
+            $this->updated_at = new \DateTime('now');
+        }
+        return $this;
+
+        // if (null !== $imageFile) {
+        //     // It is required that at least one field changes if you are using doctrine
+        //     // otherwise the event listeners won't be called and the file is lost
+        //     $this->updatedAt = new \DateTimeImmutable();
+        // }
+    }
+
+    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
@@ -47,6 +78,11 @@ class Oiseau
      * @ORM\Column(type="string", length=255)
      */
     private $alimentation;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated_at;
 
     public function getId(): ?int
     {
@@ -70,7 +106,7 @@ class Oiseau
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
@@ -121,6 +157,18 @@ class Oiseau
     public function setAlimentation(string $alimentation): self
     {
         $this->alimentation = $alimentation;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

@@ -2,7 +2,7 @@
 
 {% block title %}Article{% endblock %}
 
-{% block monTitre %}Article {{oiseau.nom}}{% endblock %}
+{% block monTitre %}Article: {{oiseau.nom}}{% endblock %}
 
 {% block body %}
 <div class="row">
@@ -14,8 +14,19 @@
                 
             </div>
             <div class="card-body">
-                <img src="{{asset('images/' ~ oiseau.image)}}" class="perso_imgOiseauArt card-img-top">
-                <p>{{oiseau.description}}</p>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="{{asset('images/oiseaux/' ~ oiseau.image)}}" class="perso_imgOiseauArt card-img-top">
+                        <div class="mt-2">
+                            <span class="badge badge-dark mr-1">{{oiseau.lieu}}</span>
+                            <span class="badge badge-dark mr-1">{{oiseau.vie}}</span>
+                            <span class="badge badge-dark">{{oiseau.alimentation}}</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <p>{{oiseau.description}}</p>
+                    </div>
+                </div>
             </div>
         </div>
         </div>

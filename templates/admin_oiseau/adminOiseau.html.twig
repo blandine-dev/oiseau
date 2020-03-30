@@ -15,7 +15,7 @@
     <tr class="table-primary">
         <td>Image</td>
         <td>Nom</td>
-        <td>Description</td>
+        {# <td>Description</td> #}
         <td>Localisation</td>
         <td>Mode de vie</td>
         <td>Alimentation</td>
@@ -23,9 +23,9 @@
     </tr>
     {% for oiseau in oiseaux %}
         <tr>
-            <td><img src="{{asset('images/' ~ oiseau.image)}}"  class="perso_imgOiseauAdmin" alt=""></td>
+            <td><img src="{{asset('images/oiseaux/' ~ oiseau.image)}}"  class="perso_imgOiseauAdmin" alt=""></td>
             <td><stong>{{oiseau.nom}}</stong></td>
-            <td>{{oiseau.description}}</td>
+            {# <td>{{oiseau.description}}</td> #}
             <td>{{oiseau.lieu}}</td>
             <td>{{oiseau.vie}}</td>
             <td>{{oiseau.alimentation}}</td>

@@ -19,12 +19,12 @@ class OiseauController extends AbstractController
     /**
      * @Route("/recherche", name="oiseaux")
      */
-    public function index()
+    public function index(OiseauRepository $repository)
     {
        
-        
+        $oiseaux = $repository->findAll();
         return $this->render('oiseau/oiseaux.html.twig', [
-            // 'oiseaux' => $oiseaux,
+            'oiseaux' => $oiseaux,
             'isLieu' => false,
             'isVie' => false,
             'isAlimentation'=> false    
@@ -56,7 +56,7 @@ class OiseauController extends AbstractController
        
         $oiseaux = $repository->findAll();
         return $this->render('oiseau/resultat.html.twig', [
-            'oiseaux' => $oiseaux,
+            'oiseaux' => $oiseaux
     
         ]);
     }

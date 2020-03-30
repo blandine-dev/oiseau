@@ -5,6 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/sandstone/bootstrap.min.css">
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet"> 
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -27,13 +28,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{path('contact')}}">Contact</a>
                 </li>
+            </ul>
+            <ul>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{path('admin_oiseau')}}">Admin</a>
+                    <a class="nav-link text-white" href="{{path('admin_oiseau')}}">Admin</a>
                 </li>
             </ul>
         </div>
     </nav>
-        <h1 class="border border-primary rounded p-2 m-2 text-black bg-outline-primary">{% block monTitre %}{% endblock %}</h1>
+        <h4 class="border border-primary rounded p-2 m-2 text-black bg-outline-primary">{% block monTitre %}{% endblock %}</h4>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

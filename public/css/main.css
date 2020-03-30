@@ -11,7 +11,7 @@
 }
 
 .perso_imgHome {
-    height: 450px;
+    height: 250px;
     width: 450px;
     object-fit: cover;
 }
@@ -20,4 +20,16 @@
     height: 70px;
     width: 70px;
     object-fit: cover;
+}
+
+.bandeau {
+    height: 325px;
+    background-image: url(../images/slide/bandeau2.jpg);
+    background-size: cover;
+    background-position: 0 center;
+}
+
+
+h1 {
+    font-family: 'Courgette', cursive;
 }
