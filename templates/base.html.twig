@@ -5,7 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/sandstone/bootstrap.min.css">
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
-        <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet"> 
+       <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Nunito:700&display=swap" rel="stylesheet"> 
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -30,14 +30,29 @@
                 </li>
             </ul>
             <ul>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{path('admin_oiseau')}}">Admin</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin
+                    </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if not app.user %}
+                    <a class="dropdown-item" href="{{path('connexion')}}">Login</a>
+                {% else %}
+                    <a class="dropdown-item" href="{{path('admin_oiseau')}}">Page Admin</a>
+                    <a class="dropdown-item" href="{{path('inscription')}}">Inscription</a>
+                    <a class="dropdown-item" href="{{path('deconnexion')}}">Logout</a>
+                {% endif %}
+                </div>
                 </li>
             </ul>
         </div>
     </nav>
-        <h4 class="border border-primary rounded p-2 m-2 text-black bg-outline-primary">{% block monTitre %}{% endblock %}</h4>
+       
+     <h4 class="border border-primary rounded p-2 m-2 text-black bg-outline-primary">{% block monTitre %}{% endblock %}</h4>
+     
         {% block body %}{% endblock %}
+        
+       
         {% block javascripts %}{% endblock %}
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

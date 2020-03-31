@@ -25,6 +25,7 @@ class OiseauController extends AbstractController
         $oiseaux = $repository->findAll();
         return $this->render('oiseau/oiseaux.html.twig', [
             'oiseaux' => $oiseaux,
+            'isTous' => false,
             'isLieu' => false,
             'isVie' => false,
             'isAlimentation'=> false    
@@ -56,7 +57,11 @@ class OiseauController extends AbstractController
        
         $oiseaux = $repository->findAll();
         return $this->render('oiseau/resultat.html.twig', [
-            'oiseaux' => $oiseaux
+            'oiseaux' => $oiseaux,
+            'isTous' => true,
+            'isLieu' => false,
+            'isVie' => false,
+            'isAlimentation'=> false
     
         ]);
     }
@@ -80,6 +85,7 @@ class OiseauController extends AbstractController
         $oiseaux = $repository->getOiseauxParPropriete('lieu', '=', $lieu);
         return $this->render('oiseau/resultat.html.twig', [
             'oiseaux' => $oiseaux,
+            'isTous' => false,
             'isLieu' => true,
             'isVie' => false,
             'isAlimentation'=> false
@@ -93,6 +99,7 @@ class OiseauController extends AbstractController
         $oiseaux = $repository->getOiseauxParPropriete('vie', '=', $vie);
         return $this->render('oiseau/resultat.html.twig', [
             'oiseaux' => $oiseaux,
+            'isTous' => false,
             'isVie' => true,
             'isLieu' => false,
             'isAlimentation'=> false
@@ -107,6 +114,7 @@ class OiseauController extends AbstractController
         $oiseaux = $repository->getOiseauxParPropriete('alimentation', '=', $alimentation);
         return $this->render('oiseau/resultat.html.twig', [
             'oiseaux' => $oiseaux,
+            'isTous' => false,
             'isAlimentation' => true,
             'isLieu' => false,
             'isVie' => false

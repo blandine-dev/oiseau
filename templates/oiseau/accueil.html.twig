@@ -7,20 +7,21 @@
 {% block body %}
 <div class="row">
     <div class="col-12 text-center">
-        <img src="{{asset('images/slide/bienvenue.png')}}" class="perso_imgHome">
+        <img src="{{asset('images/slide/bienvenue.png')}}" class="perso_imgHome mb-3">
     </div>
 </div>
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="text-warning">Le site des oiseaux</h1>
-            <p>Merle est un site pour les curieux! Vous souhaitez en savoir davantage sur les oiseaux? <br>
+            <h1 class="text-warning mb-3">Le site des oiseaux</h1>
+            <p class="intro">Merle est un site pour les curieux! Vous souhaitez en savoir davantage sur les oiseaux? <br>
             Merle répertorie les oiseaux et vous permet de les découvrir en fonction de leur localisation, de leur mode de vie et de leur alimentation</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 text-center">
-            <a href="{{path('admin_oiseau')}}" class="btn btn-warning mr-2">Les administrateurs</a>
+        <div class="col-12 text-center mt-3 mb-5">
+            <a href="{{path('connexion')}}" class="btn btn-warning mr-4">Les administrateurs</a>
             <a href="{{path('oiseaux')}}" class="btn btn-warning">Les curieux</a>
         </div>
 </div>
+
 {% endblock %}

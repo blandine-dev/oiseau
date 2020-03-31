@@ -31,5 +31,16 @@
 
 
 h1 {
-    font-family: 'Courgette', cursive;
+    font-family: 'Nunito', cursive;
+}
+
+.intro {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+}
+
+#footer {
+    height: 70px;
+    width: 100%;
+    background-color: gray;
 }
