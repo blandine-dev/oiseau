@@ -15,7 +15,7 @@ class AppFixtures extends Fixture
         ->setDescription('Un petit oiseau à la gorge rouge')
         ->setImage('oiseaux/rouge-gorge.jpg')
         ->setLieu('jardins et zones construites')
-        ->setVie('sédentaire')
+        ->setVie('sedentaire')
         ->setAlimentation('granivore')
         ;
     $manager->persist($o1);
@@ -25,7 +25,7 @@ class AppFixtures extends Fixture
         ->setDescription('Un oiseau noir au bec jaune')
         ->setImage('oiseaux/merle.jpg')
         ->setLieu('jardins et zones construites')
-        ->setVie('sédentaire')
+        ->setVie('sedentaire')
         ->setAlimentation('omnivore')
         ;
     $manager->persist($o2);
@@ -45,7 +45,7 @@ class AppFixtures extends Fixture
         ->setDescription('Un petit oiseau à tête rouge')
         ->setImage('oiseaux/chardonneret.jpg')
         ->setLieu('jardins et zones construites')
-        ->setVie('sédentaire')
+        ->setVie('sedentaire')
         ->setAlimentation('granivore')
         ;
     $manager->persist($o4);
@@ -65,7 +65,7 @@ class AppFixtures extends Fixture
         ->setDescription('Un grand oiseau noir')
         ->setImage('oiseaux/cormoran.jpg')
         ->setLieu('mers et océans')
-        ->setVie('sédentaire')
+        ->setVie('sedentaire')
         ->setAlimentation('piscivore')
         ;
     $manager->persist($o6);

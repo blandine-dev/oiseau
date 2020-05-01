@@ -20,12 +20,14 @@ class Oiseau
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
+   
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(min=3, max=25, minMessage="Le nom doit faire plus de 3 caractères", maxMessage="Le nom doit faire moins de 25 caratères")
      */
+
     private $nom;
 
     /**
@@ -66,16 +68,28 @@ class Oiseau
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Choice(
+     *     choices = { "lac", "jardin", "foret", "ocean" },
+     *     message = "Vous devez choisir un des mots-clé suivants: lac, jardin, foret ou ocean"
+     * )
      */
     private $lieu;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Choice(
+     *     choices = { "sedentaire", "migrateur" },
+     *     message = "Vous devez choisir un des mots-clé suivants: sedentaire ou migrateur"
+     * )
      */
     private $vie;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Choice(
+     *     choices = { "granivore", "insectivore", "piscivore", "carnivore", "omnivore" },
+     *     message = "Vous devez choisir un des mots-clé suivants: granivore, insectivore, piscivore, carnivore, omnivore"
+     * )
      */
     private $alimentation;
 

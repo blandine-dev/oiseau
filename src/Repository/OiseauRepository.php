@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Oiseau;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
+use App\Entity\RechercheOiseau;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Oiseau|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,32 +21,45 @@ class OiseauRepository extends ServiceEntityRepository
         parent::__construct($registry, Oiseau::class);
     }
 
-    public function getOiseauxParPropriete($propriete, $signe, $lieu) {
+    public function findAllWithPagination(RechercheOiseau $rechercheOiseau) : Query{
+        $req = $this->createQueryBuilder('o');
+        if($rechercheOiseau->getOiseauNom()){
+            $req=$req->andWhere('o.nom = :nom')
+            ->setParameter('nom', $rechercheOiseau->getOiseauNom()
+            
+        );
+        }
+            $req->orderBy('o.nom', 'ASC');
+            return $req->getQuery();
+    }
+
+    public function getOiseauxParProprieteWithPagination($propriete, $signe, $lieu) :Query {
         return $this->createQueryBuilder('o')
         ->andWhere('o.'.$propriete.' ' .$signe. ':val')
         ->setParameter('val', $lieu)
-        ->orderBy('o.id', 'DESC')
+        ->orderBy('o.nom', 'ASC')
         ->getQuery()
-        ->getResult()
+        // ->getResult()
     ;
     }
 
+    
     // /**
     //  * @return Oiseau[] Returns an array of Oiseau objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('o')
-            ->andWhere('o.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('o.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+    // */
+   
+    // public function findByExampleField($value)
+    // {
+    //     return $this->createQueryBuilder('o')
+    //         ->andWhere('o.exampleField = :val')
+    //         ->setParameter('val', $value)
+    //         ->orderBy('o.nom', 'ASC')
+    //         ->setMaxResults(10)
+    //         ->getQuery()
+    //         ->getResult()
+    //     ;
+    // }
+   
 
     /*
     public function findOneBySomeField($value): ?Oiseau

@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .perso_imgOiseau {
     height: 150px;
     width: 150px;
@@ -10,11 +15,7 @@
     object-fit: cover;
 }
 
-.perso_imgHome {
-    height: 250px;
-    width: 450px;
-    object-fit: cover;
-}
+
 
 .perso_imgOiseauAdmin {
     height: 70px;
@@ -22,25 +23,39 @@
     object-fit: cover;
 }
 
-.bandeau {
-    height: 325px;
-    background-image: url(../images/slide/bandeau2.jpg);
-    background-size: cover;
-    background-position: 0 center;
-}
-
-
 h1 {
     font-family: 'Nunito', cursive;
 }
 
-.intro {
-    font-family: 'Dancing Script', cursive;
+.navbar-brand{
+    font-family: 'Nunito', cursive;
+}
+strong {
     font-size: 25px;
 }
-
-#footer {
-    height: 70px;
-    width: 100%;
-    background-color: gray;
+.intro, .textApropos, .mail {
+    font-family: 'Comic Neue', cursive;
+    font-size: 15px;
+    
 }
+h2 {
+    font-family: 'Comic Neue', cursive;
+    font-size: 20px;
+}
+html {
+    height: 100%;
+}
+
+footer{
+    margin-top: 125px;
+    background-color: #3E3F3A;
+}
+
+.aPropos{
+    margin-top: 150px;
+}
+
+ .fa {
+    color: white;
+}
+

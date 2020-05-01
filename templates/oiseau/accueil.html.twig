@@ -3,25 +3,20 @@
 {% block title %}Accueil{% endblock %}
 
 {% block monTitre %}Accueil{% endblock %}
+{% block footer %}<div class="contact mt-3 ml-5"><a href="mailto:viry.blandine@gmail.com"class="mail"><i class="fa fa-envelope"> Contacter le Merle</i></a></div>{% endblock %}
 
 {% block body %}
-<div class="row">
-    <div class="col-12 text-center">
-        <img src="{{asset('images/slide/bienvenue.png')}}" class="perso_imgHome mb-3">
+<div class="row align-items-center border border-primary rounded mt-5 mx-3">
+    <div class=" col-12 col-md-8 py-3">
+        <img src="{{asset('images/slide/Merle.png')}}" class="img-fluid border border-primary rounded"  alt="bandeau merle">
     </div>
-</div>
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="text-warning mb-3">Le site des oiseaux</h1>
-            <p class="intro">Merle est un site pour les curieux! Vous souhaitez en savoir davantage sur les oiseaux? <br>
+    <div class="col-12 col-md-4 text-center">
+        <h1 class="text-warning mb-5">Bienvenue !</h1>
+        <p class="intro mt-5">Merle est un site pour les curieux ! <br>Vous souhaitez en savoir davantage sur les oiseaux ? <br>
             Merle répertorie les oiseaux et vous permet de les découvrir en fonction de leur localisation, de leur mode de vie et de leur alimentation</p>
-        </div>
     </div>
-    <div class="row">
-        <div class="col-12 text-center mt-3 mb-5">
-            <a href="{{path('connexion')}}" class="btn btn-warning mr-4">Les administrateurs</a>
-            <a href="{{path('oiseaux')}}" class="btn btn-warning">Les curieux</a>
-        </div>
 </div>
+    
+
 
 {% endblock %}

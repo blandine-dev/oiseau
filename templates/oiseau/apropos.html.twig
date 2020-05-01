@@ -3,25 +3,28 @@
 {% block title %}A propos{% endblock %}
 
 {% block monTitre %}A propos de Merle{% endblock %}
+{% block footer %}<div class="contact mt-3 ml-5"><a href="mailto:viry.blandine@gmail.com" class="mail"><i class="fa fa-envelope"> Contacter le Merle</i></a></div>{% endblock %}
 
 {% block body %}
- <div class="col-12">
-            <div class="card border-primary mb-3 mx-auto" style ="max-width:60rem">
-            <div class="card-header text-center bg-primary text-white">
-                <h5 class='card-title text-center pb-2 mx3 border-bottom border-white'></h5>
+<div class="row aPropos">
+    <div class="col-12">
+        <div class="card border-primary mb-3 mx-auto" style ="max-width:60rem">
+            <div class="card-header text-center bg-warning text-white">
+                {# <h5 class='card-title text-center pb-2 mx3 border-bottom border-white'></h5> #}
                 
             </div>
             <div class="card-body">
-                <p>Merle est une application qui est naît de mon intérêt pour les oiseaux et de mon projet de réorientation professionnelle.
-                Depuis septembre 2019, je suis une formation en Développement web au Digital campus de Toulouse ; j'ai choisi de consacrer mon projet de fin d'étude à la réalisation d'une application web permettant d'identifier et de mieux connaître les oiseaux que l'on peut observer en France.
-                Cette démarche s'inscrit également dans un souci de mieux connaître et de préserver notre environnement. Nous savons aujourd'hui que de nombreuses espèces d'oiseaux sont menacées. Selon des études récentes « 421 millions d'oiseaux ont disparu en moins de 30 ans ».
-                Lorsque l'on est informé on est plus enclin à respecter et à protéger.
+                <p class="textApropos">Merle est une application qui est naît de mon intérêt pour les oiseaux et de mon projet de réorientation professionnelle dans le développement web. <br>
+                Et pour prendre mon envol, j'ai choisi de consacrer mon projet de fin d'étude à la réalisation d'une application permettant d'identifier et de mieux connaître les oiseaux que l'on peut observer en France.<br>
+                Cette démarche s'inscrit également dans un souci de mieux connaître et de préserver notre environnement. Nous savons aujourd'hui que de nombreuses espèces d'oiseaux sont menacées. Selon des études récentes, en Europe « 421 millions d'oiseaux ont disparu en moins de 30 ans ».
+                Lorsque on est informé on est plus enclin à respecter et à protéger. <br/>
+                <br/>
+                Et je remercie particulièrement mon merle et mes oisillons qui sont l'énergie de tous mes projets...
                 </p>
                    
             </div>
         </div>
-        </div>
-    
+    </div>    
 </div>
 
 {% endblock %}

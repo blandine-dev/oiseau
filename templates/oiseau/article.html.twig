@@ -3,6 +3,7 @@
 {% block title %}Article{% endblock %}
 
 {% block monTitre %}Article: {{oiseau.nom}}{% endblock %}
+{% block footer %}<div class="contact mt-3 ml-5"><a href="mailto:viry.blandine@gmail.com"class="mail"><i class="fa fa-envelope"> Contacter le Merle</i></a></div>{% endblock %}
 
 {% block body %}
 <div class="row">
@@ -18,9 +19,10 @@
                     <div class="col-6">
                         <img src="{{asset('images/oiseaux/' ~ oiseau.image)}}" class="perso_imgOiseauArt card-img-top">
                         <div class="mt-2">
-                            <span class="badge badge-dark mr-1">{{oiseau.lieu}}</span>
-                            <span class="badge badge-dark mr-1">{{oiseau.vie}}</span>
-                            <span class="badge badge-dark">{{oiseau.alimentation}}</span>
+                            <a class="btn btn-outline-warning btn-sm my-2" href="{{path('oiseauxParLieu', {"lieu": "lac"})}}">Lacs et rivières</a>
+                            <a class="btn btn-outline-warning btn-sm" href="{{path('oiseauxParLieu', {"lieu": "jardin"})}}">Jardins et zones construites</a>
+                            <a class="btn btn-outline-warning btn-sm" href="{{path('oiseauxParLieu', {"lieu": "foret"})}}">Forêts et campagnes</a>
+                            <a class="btn btn-outline-warning btn-sm" href="{{path('oiseauxParLieu', {"lieu": "ocean"})}}">Mers et océans</a>
                         </div>
                     </div>
                     <div class="col-6">
@@ -29,8 +31,7 @@
                 </div>
             </div>
         </div>
-        </div>
-    
-    </div>
+    </div> 
+</div>
 
 {% endblock %}
