@@ -3,35 +3,44 @@
 {% block title %}Article{% endblock %}
 
 {% block monTitre %}Article: {{oiseau.nom}}{% endblock %}
-{% block footer %}<div class="contact mt-3 ml-5"><a href="mailto:viry.blandine@gmail.com"class="mail"><i class="fa fa-envelope"> Contacter le Merle</i></a></div>{% endblock %}
 
 {% block body %}
 <div class="row">
-    
-        <div class="col-12">
-            <div class="card border-primary mb-3 mx-auto" style ="max-width:60rem">
-            <div class="card-header text-center bg-warning text-white">
+    <div class="col-12">
+        <div class="card border-dark mb-3 mx-auto" style ="max-width:60rem">
+            <div class="card-header bg-warning text-center text-white">
                 <h5 class='card-title text-center pb-2 mx3 border-bottom border-white'>{{oiseau.nom}}</h5>
-                
             </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-6">
-                        <img src="{{asset('images/oiseaux/' ~ oiseau.image)}}" class="perso_imgOiseauArt card-img-top">
-                        <div class="mt-2">
-                            <a class="btn btn-outline-warning btn-sm my-2" href="{{path('oiseauxParLieu', {"lieu": "lac"})}}">Lacs et rivières</a>
-                            <a class="btn btn-outline-warning btn-sm" href="{{path('oiseauxParLieu', {"lieu": "jardin"})}}">Jardins et zones construites</a>
-                            <a class="btn btn-outline-warning btn-sm" href="{{path('oiseauxParLieu', {"lieu": "foret"})}}">Forêts et campagnes</a>
-                            <a class="btn btn-outline-warning btn-sm" href="{{path('oiseauxParLieu', {"lieu": "ocean"})}}">Mers et océans</a>
+             <div class="row text-center mb-3">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class='info'>Localisation: 
+                            <span class="badge badge-dark">{{oiseau.lieu}}</span>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-md-6 col-lg-4">  
+                        <div class='info'>Mode de vie: 
+                            <span class="badge badge-dark">{{oiseau.vie}}</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 ">    
+                        <div class='info'>Alimentation: 
+                            <span class="badge badge-dark">{{oiseau.alimentation}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 text-center mb-2">
+                        <img src="{{asset('images/oiseaux/' ~ oiseau.image)}}" class="img-fluid perso_imgOiseauArt card-img-top"> 
+                    </div>
+                    <div class="col-12 col-md-6 mb-2">
                         <p>{{oiseau.description}}</p>
+                        <p>{{oiseau.descriptionDeux}}</p>
+                        <p>{{oiseau.descriptionTrois}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div> 
 </div>
-
 {% endblock %}

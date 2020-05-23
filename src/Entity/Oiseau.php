@@ -68,28 +68,16 @@ class Oiseau
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Choice(
-     *     choices = { "lac", "jardin", "foret", "ocean" },
-     *     message = "Vous devez choisir un des mots-clé suivants: lac, jardin, foret ou ocean"
-     * )
      */
     private $lieu;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Choice(
-     *     choices = { "sedentaire", "migrateur" },
-     *     message = "Vous devez choisir un des mots-clé suivants: sedentaire ou migrateur"
-     * )
      */
     private $vie;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Choice(
-     *     choices = { "granivore", "insectivore", "piscivore", "carnivore", "omnivore" },
-     *     message = "Vous devez choisir un des mots-clé suivants: granivore, insectivore, piscivore, carnivore, omnivore"
-     * )
      */
     private $alimentation;
 
@@ -97,6 +85,21 @@ class Oiseau
      * @ORM\Column(type="datetime")
      */
     private $updated_at;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $motcl;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $descriptionDeux;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $descriptionTrois;
 
     public function getId(): ?int
     {
@@ -183,6 +186,42 @@ class Oiseau
     public function setUpdatedAt(\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getMotcl(): ?string
+    {
+        return $this->motcl;
+    }
+
+    public function setMotcl(string $motcl): self
+    {
+        $this->motcl = $motcl;
+
+        return $this;
+    }
+
+    public function getDescriptionDeux(): ?string
+    {
+        return $this->descriptionDeux;
+    }
+
+    public function setDescriptionDeux(?string $descriptionDeux): self
+    {
+        $this->descriptionDeux = $descriptionDeux;
+
+        return $this;
+    }
+
+    public function getDescriptionTrois(): ?string
+    {
+        return $this->descriptionTrois;
+    }
+
+    public function setDescriptionTrois(?string $descriptionTrois): self
+    {
+        $this->descriptionTrois = $descriptionTrois;
 
         return $this;
     }

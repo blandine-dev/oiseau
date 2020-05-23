@@ -15,8 +15,6 @@ body {
     object-fit: cover;
 }
 
-
-
 .perso_imgOiseauAdmin {
     height: 70px;
     width: 70px;
@@ -27,23 +25,26 @@ h1 {
     font-family: 'Nunito', cursive;
 }
 
-.navbar-brand{
-    font-family: 'Nunito', cursive;
-}
-strong {
-    font-size: 25px;
-}
-.intro, .textApropos, .mail {
-    font-family: 'Comic Neue', cursive;
-    font-size: 15px;
-    
-}
-h2 {
+h2, h4 {
     font-family: 'Comic Neue', cursive;
     font-size: 20px;
 }
-html {
-    height: 100%;
+
+h5 {
+    text-transform: uppercase;
+}
+
+.navbar-brand{
+    font-family: 'Nunito', cursive;
+}
+
+strong {
+    font-size: 25px;
+}
+
+.intro, .textApropos, .mail, .critere, .info {
+    font-family: 'Comic Neue', cursive;
+    font-size: 15px; 
 }
 
 footer{
@@ -52,10 +53,13 @@ footer{
 }
 
 .aPropos{
-    margin-top: 150px;
+    margin-top: 110px;
 }
 
- .fa {
+.fa {
     color: white;
-}
+} 
 
+.contact a, .droit{
+    font-family:"Roboto"!important;
+}

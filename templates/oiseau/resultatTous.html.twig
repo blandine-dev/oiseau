@@ -2,43 +2,42 @@
 
 {% block title %}Résultat{% endblock %}
 
-{% block monTitre %}Rechercher par le nom de l'oiseau{% endblock %}
-{% block footer %}<div class="contact mt-3 ml-5"><a href="mailto:viry.blandine@gmail.com"class="mail"><i class="fa fa-envelope"> Contacter le Merle</i></a></div>{% endblock %}
+{% block monTitre %}Rechercher par nom{% endblock %}
 
 {% block body %}
 
 {{form_start(form)}}
-<div class="row align-items-center mt-3 mx-1">
-    <div class="col-4 mb-2">
-        {{form_row(form.oiseauNom)}}
-    </div>
-    <div class="col-2 my-2">
-        <input type="submit" value="Rechercher" class="btn btn-outline-warning">
-    </div>
-</div>  
+    <div class="row align-items-center mt-3 mx-1">
+        <div class="col-4 mb-2">
+            {{form_row(form.oiseauMotcl)}}
+        </div>
+        <div class="col-2 my-2">
+            <input type="submit" value="Rechercher" class="btn btn-outline-warning">
+        </div>
+    </div>  
 {{form_end(form)}}
 
-<div class="row">
-    {% for oiseau in oiseaux %}
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-            <div class="card border-primary mb-3 mx-auto" style ="max-width:20rem">
-            <div class="card-header text-center">
-                <h5 class='card-title text-center pb-2 mx3 border-bottom border-warning'><a href="{{path('afficher_oiseau', {'id' : oiseau.id})}}" class="btn btn-warning">{{oiseau.nom}}</a></h5>
+    <div class="row">
+        {% for oiseau in oiseaux %}
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card border-primary mb-3 mx-auto" style ="max-width:20rem">
+                    <div class="card-header text-center">
+                        <h5 class='card-title text-center pb-2 mx3 border-bottom border-warning'><a href="{{path('afficher_oiseau', {'id' : oiseau.id})}}" class="btn btn-warning">{{oiseau.nom}}</a></h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <img src="{{asset('images/oiseaux/' ~ oiseau.image)}}" class="perso_imgOiseau card-img-top">
+                    </div>
+                </div>
             </div>
-            <div class="card-body text-center">
-                <img src="{{asset('images/oiseaux/' ~ oiseau.image)}}" class="perso_imgOiseau card-img-top">
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-2 ml-2">
+            <div class="navigation">
+                {{ knp_pagination_render(oiseaux) }}
             </div>
         </div>
     </div>
-    {% endfor %}
-</div>
-<div class="row">
-<div class="col-2 ml-2">
-    <div class="navigation">
-        {{ knp_pagination_render(oiseaux) }}
-    </div>
-</div>
-</div>
     
 
 {% endblock %}

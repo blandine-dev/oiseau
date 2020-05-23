@@ -25,19 +25,16 @@ class OiseauController extends AbstractController
      */
     public function index(OiseauRepository $repository, Request $request)
     {
-        
-       
         $oiseaux = $repository->findAll();
         return $this->render('oiseau/oiseaux.html.twig', [
             'oiseaux' => $oiseaux,
-            'isTous' => false,
-            'isLieu' => false,
+            'isLieu'=> false,
             'isVie' => false,
-            'isAlimentation'=> false    
+            'isAlimentation'=> false, 
         ]);
     }
 
-     /**
+    /**
      * @Route("/apropos", name="apropos")
      */
     public function apropos()
@@ -58,12 +55,12 @@ class OiseauController extends AbstractController
         $oiseaux = $paginatorInterface->paginate(
             $repository->findAllWithPagination($rechercheOiseau), 
             $request->query->getInt('page', 1), /*page number*/
-            8 /*limit per page*/
+            20/*limit per page*/
         );
 
         return $this->render('oiseau/resultatTous.html.twig', [
             'oiseaux' => $oiseaux,
-            "form" =>$form->createView()
+            "form" =>$form->createView(),
         ]);
     }
 
@@ -74,7 +71,7 @@ class OiseauController extends AbstractController
     {
         $oiseau = $repository->find($id);
         return $this->render('oiseau/article.html.twig', [
-           "oiseau" => $oiseau
+           "oiseau" => $oiseau,
         ]);
     }
 
@@ -88,13 +85,12 @@ class OiseauController extends AbstractController
             $oiseaux = $paginatorInterface->paginate(
             $repository->getOiseauxParProprieteWithPagination('lieu', '=', $lieu), 
             $request->query->getInt('page', 1), /*page number*/
-            8 /*limit per page*/
+            12 /*limit per page*/
         );
         
         return $this->render('oiseau/resultat.html.twig', [
             'oiseaux' => $oiseaux,
-            'isTous' => false,
-            'isLieu' =>true,
+            'isLieu' => true,
             'isVie' => false,
             'isAlimentation'=> false
         ]);
@@ -107,14 +103,13 @@ class OiseauController extends AbstractController
             $oiseaux = $paginatorInterface->paginate(
             $repository->getOiseauxParProprieteWithPagination('vie', '=', $vie), 
             $request->query->getInt('page', 1), /*page number*/
-            8 /*limit per page*/
+            12 /*limit per page*/
         );
         return $this->render('oiseau/resultat.html.twig', [
             'oiseaux' => $oiseaux,
-            'isTous' => false,
             'isVie' => true,
             'isLieu' => false,
-            'isAlimentation'=> false
+            'isAlimentation'=> false,
         ]);
     }
 
@@ -126,17 +121,14 @@ class OiseauController extends AbstractController
             $oiseaux = $paginatorInterface->paginate(
             $repository->getOiseauxParProprieteWithPagination('alimentation', '=', $alimentation), 
             $request->query->getInt('page', 1), /*page number*/
-            8 /*limit per page*/
+            12 /*limit per page*/
         );
         return $this->render('oiseau/resultat.html.twig', [
             'oiseaux' => $oiseaux,
-            'isTous' => false,
             'isAlimentation' => true,
             'isLieu' => false,
             'isVie' => false
         ]);
     }
-
-    
 
 }

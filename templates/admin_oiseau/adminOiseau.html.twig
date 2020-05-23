@@ -5,53 +5,56 @@
 
 
 {% block body %}
-{% for message in app.flashes('success') %}
-    <div class="alert alert-success">
-        {{message}}
-    </div>
-{% endfor %}
-{{form_start(form)}}
-<div class="row align-items-center mt-3 mx-1">
-    <div class="col-4 mb-2">
-        {{form_row(form.oiseauNom)}}
-    </div>
-    <div class="col-2 my-2">
-        <input type="submit" value="Rechercher" class="btn btn-success">
-    </div>
-</div>
-    
-{{form_end(form)}}
-<a href="{{path('admin_oiseau_creation')}}" class="btn btn-success my-3 ml-3">Ajouter</a>
-<table class="table my-3 mx-3">
-    <tr class="table-secondary">
-        <td>Image</td>
-        <td>Nom</td>
-        {# <td>Description</td> #}
-        <td>Localisation</td>
-        <td>Mode de vie</td>
-        <td>Alimentation</td>
-        <td>Actions</td>
-    </tr>
-    {% for oiseau in oiseaux %}
-        <tr>
-            <td><img src="{{asset('images/oiseaux/' ~ oiseau.image)}}"  class="perso_imgOiseauAdmin" alt=""></td>
-            <td><stong>{{oiseau.nom}}</stong></td>
-            {# <td>{{oiseau.description}}</td> #}
-            <td>{{oiseau.lieu}}</td>
-            <td>{{oiseau.vie}}</td>
-            <td>{{oiseau.alimentation}}</td>
-            <td><a class="btn btn-success" href="{{path('admin_oiseau_modification', {'id' : oiseau.id})}}">Modifier</a>
-                <form method="POST" style="display:inline-block" action="{{path('admin_oiseau_suppression', {'id' : oiseau.id})}}">
-                    <input type="hidden" name="_method" value="delete">
-                    <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ oiseau.id)}}">
-                    <input type="submit" class="btn btn-danger" value="Supprimer" onsubmit="return confirm ('Confirmez-vous la suppression?')">
-                </form>
-            </td>
-        </tr>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{message}}
+        </div>
     {% endfor %}
-</table>
-<div class="navigation">
-    {{ knp_pagination_render(oiseaux) }}
-</div>
+
+    {{form_start(form)}}
+        <div class="row align-items-center mt-3 mx-1">
+            <div class="col-4 mb-2">
+                {{form_row(form.oiseauMotcl)}}
+            </div>
+            <div class="col-2 my-2">
+                <input type="submit" value="Rechercher" class="btn btn-success">
+            </div>
+        </div>  
+    {{form_end(form)}}
+
+    <a href="{{path('admin_oiseau_creation')}}" class="btn btn-success my-3 ml-3">Ajouter</a>
+    <table class="table my-3 mx-3">
+        <tr class="table-secondary">
+            <td>Image</td>
+            <td>Nom</td>
+            <td>Mot clé</td>
+            {# <td>Description</td> #}
+            <td>Localisation</td>
+            <td>Mode de vie</td>
+            <td>Alimentation</td>
+            <td>Actions</td>
+        </tr>
+        {% for oiseau in oiseaux %}
+            <tr>
+                <td><img src="{{asset('images/oiseaux/' ~ oiseau.image)}}"  class="perso_imgOiseauAdmin" alt=""></td>
+                <td><stong>{{oiseau.nom}}</stong></td>
+                <td>{{oiseau.motcl}}</td>
+                {# <td>{{oiseau.description}}</td> #}
+                <td>{{oiseau.lieu}}</td>
+                <td>{{oiseau.vie}}</td>
+                <td>{{oiseau.alimentation}}</td>
+                <td><a class="btn btn-success" href="{{path('admin_oiseau_modification', {'id' : oiseau.id})}}">Modifier</a>
+                    <form method="POST" style="display:inline-block" action="{{path('admin_oiseau_suppression', {'id' : oiseau.id})}}">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ oiseau.id)}}">
+                        <input type="submit" class="btn btn-danger" value="Supprimer" onsubmit="return confirm ('Confirmez-vous la suppression?')">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="navigation">
+        {{ knp_pagination_render(oiseaux) }}
+    </div>
 
 {% endblock %}

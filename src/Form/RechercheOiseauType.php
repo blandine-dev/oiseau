@@ -14,11 +14,13 @@ class RechercheOiseauType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('oiseauNom', TextType::class,[
+            ->add('oiseauMotcl', TextType::class,[
                 "required" =>true,
-                "label" => "Rechercher par le nom de l'oiseau"
-            ])
-        ;
+                "label" =>"Rechercher par le nom de l'oiseau",
+                'attr'=>[
+                    'placeholder'=>'Entrez un nom en un seul mot. Ex : pour "mésange bleue": "mésange"'
+                ],
+            ]); 
     }
 
     public function configureOptions(OptionsResolver $resolver)

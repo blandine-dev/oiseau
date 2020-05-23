@@ -3,20 +3,38 @@
 {% block title %}Accueil{% endblock %}
 
 {% block monTitre %}Accueil{% endblock %}
-{% block footer %}<div class="contact mt-3 ml-5"><a href="mailto:viry.blandine@gmail.com"class="mail"><i class="fa fa-envelope"> Contacter le Merle</i></a></div>{% endblock %}
-
+ 
 {% block body %}
 <div class="row align-items-center border border-primary rounded mt-5 mx-3">
     <div class=" col-12 col-md-8 py-3">
-        <img src="{{asset('images/slide/Merle.png')}}" class="img-fluid border border-primary rounded"  alt="bandeau merle">
+        <img src="{{asset('images/slide/Merle.png')}}" class=" img_titre img-fluid border border-primary rounded"  alt="bandeau merle de face">
     </div>
     <div class="col-12 col-md-4 text-center">
-        <h1 class="text-warning mb-5">Bienvenue !</h1>
+        <h1 class="text-warning mb-5">Bienvenue sur l'application MERLE !</h1>
         <p class="intro mt-5">Merle est un site pour les curieux ! <br>Vous souhaitez en savoir davantage sur les oiseaux ? <br>
-            Merle répertorie les oiseaux et vous permet de les découvrir en fonction de leur localisation, de leur mode de vie et de leur alimentation</p>
+            Merle répertorie les oiseaux qui vivent près de chez nous, et vous permet de les découvrir en fonction de leur localisation, de leur mode de vie et de leur alimentation.</p>
+        <a class="btn btn-warning" href="{{path('oiseaux')}}"> En savoir plus</a>
     </div>
 </div>
     
 
-
+<footer class="position-absolute" style="height: 15%; width: 100%;">
+<div class="row justify-content-center text-center mt-3 text-white">
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="contact">
+            <i class="fa fa-envelope"><a href="mailto:viry.blandine@gmail.com" class="mail text-decoration-none text-white"> Contacter le Merle</a></i>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="apropos">
+            <a href="{{path('apropos')}}" class="text-decoration-none text-white">A propos du Merle</a>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="droit">
+             <p>MERLE <i class="fa fa-copyright"></i> - 2020 - Tous droits réservés</p>
+        </div>
+    </div>
+</div>
+{% block footer %}{% endblock %}</footer> 
 {% endblock %}

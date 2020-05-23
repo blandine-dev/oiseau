@@ -23,12 +23,12 @@ class OiseauRepository extends ServiceEntityRepository
 
     public function findAllWithPagination(RechercheOiseau $rechercheOiseau) : Query{
         $req = $this->createQueryBuilder('o');
-        if($rechercheOiseau->getOiseauNom()){
-            $req=$req->andWhere('o.nom = :nom')
-            ->setParameter('nom', $rechercheOiseau->getOiseauNom()
-            
-        );
+        if($rechercheOiseau->getOiseauMotcl()){
+            $req = $req->andWhere('o.motcl = :motcl')
+            ->setParameter('motcl', $rechercheOiseau->getOiseauMotcl()
+            );
         }
+        
             $req->orderBy('o.nom', 'ASC');
             return $req->getQuery();
     }

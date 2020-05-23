@@ -29,7 +29,7 @@ class AdminOiseauController extends AbstractController
         $oiseaux = $paginatorInterface->paginate(
             $repository->findAllWithPagination($rechercheOiseau), 
             $request->query->getInt('page', 1), /*page number*/
-            5 /*limit per page*/
+           10/*limit per page*/
         );
         return $this->render('admin_oiseau/adminOiseau.html.twig', [
             "oiseaux" => $oiseaux,

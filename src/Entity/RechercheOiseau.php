@@ -2,16 +2,17 @@
 
 namespace App\Entity;
 
+
 class RechercheOiseau {
-    private $oiseauNom;
+    private $oiseauMotcl;
 
-    public function getOiseauNom(){
-        return $this->oiseauNom;
-
+    public function getOiseauMotcl(){
+        return $this->oiseauMotcl;
     }
 
-    public function setOiseauNom($nom){
-        $this->oiseauNom = $nom;
+    public function setOiseauMotcl($motcl){
+        $this->oiseauMotcl = $motcl;
         return $this;
     }
+
 }

@@ -11,26 +11,28 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
-{{form_start(form)}}
-<div class="row">
-    <div class="col-6">
-        {% if isModification %}
-        <img src="{{asset('images/oiseaux/' ~ oiseau.image)}}" style="width:25%">
-        {% endif %}
-        <div>{{form_row(form.imageFile, {'attr': {'placeholder':'Téléchargez une image'},'label': "Image"})}}</div>
-        <div>{{form_row(form.nom, {'attr': {'placeholder':'Entrez un nom'},'label': " Nom de l'oiseau"})}}</div>
+    <div class="container">
+        {{form_start(form)}}
+        <div class="row">
+            <div class="col-6">
+                {% if isModification %}
+                <img src="{{asset('images/oiseaux/' ~ oiseau.image)}}" style="width:25%">
+                {% endif %}
+                <div>{{form_row(form.imageFile, {'attr': {'placeholder':'Téléchargez une image'},'label': "Image"})}}</div>
+                <div>{{form_row(form.nom, {'attr': {'placeholder':'Entrez un nom'},'label': " Nom de l'oiseau"})}}</div>
+                <div>{{form_row(form.motcl, {'attr' : {'placeholder': 'Entrez un mot clé'}, 'label' : "Mot clé"})}}</div>
+            </div>
+            <div class="col-6">
+                <div>{{form_row(form.description, {'attr': {'placeholder':'Entrez une description'},'label': "Description de l'oiseau"})}}</div>
+                <div>{{form_row(form.descriptionDeux, {'attr': {'placeholder':'Entrez une description'},'label': "Description de l'oiseau"})}}</div>
+                <div>{{form_row(form.descriptionTrois, {'attr': {'placeholder':'Entrez une description'},'label': "Description de l'oiseau"})}}</div>
+                <div>{{form_row(form.lieu,{'label': "Localisation de l'oiseau"})}}</div>
+                <div>{{form_row(form.vie, {'label': "Mode de vie de l'oiseau"})}}</div>
+                <div>{{form_row(form.alimentation, {'label': "Type d'alimentation de l'oiseau"})}}</div>
+            {{form_widget(form)}}
+            </div>
+        </div>
+        <input type="submit" class="btn btn-success" value="Enregistrer">
+        {{form_end(form)}}
     </div>
-    <div class="col-6">
-        <div>{{form_row(form.description, {'attr': {'placeholder':'Entrez une description'},'label': "Description de l'oiseau"})}}</div>
-        <div>{{form_row(form.lieu, {'attr': {'placeholder':'Entrez un mot-clé : "lac", "jardin", "foret" ou "ocean"'},'label': "Localisation de l'oiseau"})}}</div>
-        <div>{{form_row(form.vie, {'attr': {'placeholder':'Entrez un mot-clé: "migrateur" ou "sedentaire"'},'label': "Mode de vie de l'oiseau"})}}</div>
-        <div>{{form_row(form.alimentation, {'attr': {'placeholder':'Entrez un mot-clé: "granivore", "insectivore", "piscivore", "carnivore" ou "omnivore"'},'label': "Type d'alimentation de l'oiseau"})}}</div>
-    {{form_widget(form)}}
-    </div>
-</div>
-    <input type="submit" class="btn btn-success" value="Enregistrer">
-{{form_end(form)}}
-</div>
-
 {% endblock %}

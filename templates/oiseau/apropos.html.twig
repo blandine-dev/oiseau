@@ -3,28 +3,44 @@
 {% block title %}A propos{% endblock %}
 
 {% block monTitre %}A propos de Merle{% endblock %}
-{% block footer %}<div class="contact mt-3 ml-5"><a href="mailto:viry.blandine@gmail.com" class="mail"><i class="fa fa-envelope"> Contacter le Merle</i></a></div>{% endblock %}
 
 {% block body %}
 <div class="row aPropos">
     <div class="col-12">
         <div class="card border-primary mb-3 mx-auto" style ="max-width:60rem">
-            <div class="card-header text-center bg-warning text-white">
-                {# <h5 class='card-title text-center pb-2 mx3 border-bottom border-white'></h5> #}
-                
-            </div>
+            <div class="card-header text-center bg-warning text-white"> </div>
             <div class="card-body">
-                <p class="textApropos">Merle est une application qui est naît de mon intérêt pour les oiseaux et de mon projet de réorientation professionnelle dans le développement web. <br>
-                Et pour prendre mon envol, j'ai choisi de consacrer mon projet de fin d'étude à la réalisation d'une application permettant d'identifier et de mieux connaître les oiseaux que l'on peut observer en France.<br>
-                Cette démarche s'inscrit également dans un souci de mieux connaître et de préserver notre environnement. Nous savons aujourd'hui que de nombreuses espèces d'oiseaux sont menacées. Selon des études récentes, en Europe « 421 millions d'oiseaux ont disparu en moins de 30 ans ».
-                Lorsque on est informé on est plus enclin à respecter et à protéger. <br/>
+                <h4>A propos du projet</h4>
+                <p class="textApropos">Merle est une application qui est née de mon intérêt pour les oiseaux et de mon projet de réorientation professionnelle dans le développement web. 
+                Et pour prendre mon envol, j'ai souhaité réaliser une application permettant d'identifier et de mieux connaître les oiseaux que l'on peut observer près de chez nous.<br>
+                Cette démarche s'inscrit également dans un souci de préserver notre environnement. Nous savons aujourd'hui que de nombreuses espèces d'oiseaux sont menacées. Selon des études récentes, en Europe, « 421 millions d'oiseaux ont disparu en moins de 30 ans ».
+                Or, il me semble que lorsque l'on connaît son environnement on est plus enclin à le respecter et à le protéger. <br/>
                 <br/>
-                Et je remercie particulièrement mon merle et mes oisillons qui sont l'énergie de tous mes projets...
-                </p>
-                   
+                <h4>A propos du classement des oiseaux</h4>
+                <p class="textApropos">Pour faciliter la recherche dans notre application, les oiseaux sont classés en 3 grandes catégories (localisation, mode de vie et alimentation) divisées en sous catégories. Or, dans la nature rien n'est si simple.
+                La localisation des oiseaux, comme les régimes alimentaires, peuvent varier selon les saisons, les périodes de reproduction...et bien d'autres facteurs. Avec les changements climatiques, nous observons aussi que de nombreuses espèces d'oiseaux ont tendance à se sédentariser. Notre classement est simplement donné à titre indicatif.</p>
             </div>
         </div>
     </div>    
 </div>
 
+<footer class="position-absolute" style="height: 15%; width: 100%;">
+<div class="row justify-content-center text-center mt-3 text-white">
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="contact">
+            <i class="fa fa-envelope"><a href="mailto:viry.blandine@gmail.com" class="mail text-decoration-none text-white"> Contacter le Merle</a></i>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="apropos">
+            <a href="{{path('apropos')}}" class="text-decoration-none text-white">A propos du Merle</a>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="droit">
+            <p>MERLE <i class="fa fa-copyright"></i> - 2020 - Tous droits réservés</p>
+        </div>
+    </div>
+</div>
+{% block footer %}{% endblock %}</footer> 
 {% endblock %}

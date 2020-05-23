@@ -3,60 +3,56 @@
 {% block title %}Recherche{% endblock %}
 
 {% block monTitre %}Recherche{% endblock %}
-{% block footer %}<div class="contact mt-3 ml-5"><a href="mailto:viry.blandine@gmail.com"class="mail"><i class="fa fa-envelope"> Contacter le Merle</i></a></div>{% endblock %}
-{% block body %}
 
+
+{% block body %}
 <div class="row text-center mb-5">
-    <div class="col-12 mt-3">
-        <img src="{{asset('../images/slide/bandeau2.jpg')}}" class="img-fluid max-whidth:100% border border-primary rounded mb-2"alt="bandeau merle">
-        <hr class=" border border-primary my-4 mx-5"> 
+    <div class="col-12 mt-2">
+        <img src="{{asset('../images/slide/bandeau2.jpg')}}" class="img-fluid max-whidth:100% border border-primary rounded mb-2"alt="bandeau merle de profil">
+        <hr class=" border border-primary mx-5"> 
     </div>
         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-            <div class="dropdown">
+            <div class="dropdown mt-2">
                 <button class="btn btn-warning btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Localisation
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "lac"})}}">Lacs et rivières</a>
-                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "jardin"})}}">Jardins et zones construites</a>
-                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "foret"})}}">Forêts et campagnes</a>
-                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "ocean"})}}">Mers et océans</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "lacs et rivières"})}}">Lacs et rivières</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "jardins et zones construites"})}}">Jardins et zones construites</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "campagnes"})}}">Campagnes</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParLieu', {"lieu": "mers et océans"})}}">Mers et océans</a>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-         <div class="dropdown">
+            <div class="dropdown mt-2">
                 <button class="btn btn-warning btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Mode de vie
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{{path('oiseauxParVie', {"vie": "migrateur"})}}">Migrateurs</a>
-                    <a class="dropdown-item" href="{{path('oiseauxParVie', {"vie": "sedentaire"})}}">Sédentaires</a>
-                    
+                    <a class="dropdown-item" href="{{path('oiseauxParVie', {"vie": "sédentaire"})}}">Sédentaires</a>  
                 </div>
             </div>
         </div>
-
         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="dropdown">
+            <div class="dropdown mt-2">
                 <button class="btn btn-warning btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Alimentation
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "granivore"})}}">Granivores</a>
-                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "piscivore"})}}">Piscivores</a>
-                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "insectivore"})}}">Insectivores</a>
-                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "carnivore"})}}">Carnivores</a>
-                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "omnivore"})}}">Omnivores</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "graines, fruits"})}}">graines, fruits...</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "poissons, batraciens, reptils, crustacés"})}}">poissons, batraciens, reptils, crustacés...</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "insectes, petits invertébrés"})}}">insectes, petits invertébrés...</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "petits mamifères, oiseaux, charognes"})}}">petits mamifères, oiseaux, charognes...</a>
+                    <a class="dropdown-item" href="{{path('oiseauxParAlimentation', {"alimentation": "très variée (omnivore)"})}}">très variée (omnivore)</a>
                 </div>
             </div>
         </div> 
-
     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <button type="button" class="btn btn-warning btn-lg">
+        <button type="button" class="btn btn-warning btn-lg mt-2">
             <a href="{{path('oiseauxTous')}}" class="text-white text-decoration-none">Recherche par nom</a>
         </button>     
     </div>  
 </div>
-
 {% endblock %}
