@@ -131,4 +131,13 @@ class OiseauController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/mentions", name="mentions_legales")
+     */
+    public function mentions()
+    {
+       
+        return $this->render('oiseau/mentions.html.twig');
+    }
+
 }

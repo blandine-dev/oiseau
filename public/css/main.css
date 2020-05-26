@@ -30,6 +30,10 @@ h2, h4 {
     font-size: 20px;
 }
 
+h4 {
+    font-weight: bold;
+}
+
 h5 {
     text-transform: uppercase;
 }
@@ -42,7 +46,7 @@ strong {
     font-size: 25px;
 }
 
-.intro, .textApropos, .mail, .critere, .info {
+.intro, .textApropos, .mail, .critere, .info, .textMentions {
     font-family: 'Comic Neue', cursive;
     font-size: 15px; 
 }
@@ -63,3 +67,4 @@ footer{
 .contact a, .droit{
     font-family:"Roboto"!important;
 }
+

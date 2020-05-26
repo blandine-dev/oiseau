@@ -44,10 +44,10 @@
                 <td>{{oiseau.vie}}</td>
                 <td>{{oiseau.alimentation}}</td>
                 <td><a class="btn btn-success" href="{{path('admin_oiseau_modification', {'id' : oiseau.id})}}">Modifier</a>
-                    <form method="POST" style="display:inline-block" action="{{path('admin_oiseau_suppression', {'id' : oiseau.id})}}">
+                    <form method="POST" style="display:inline-block" action="{{path('admin_oiseau_suppression', {'id' : oiseau.id})}}" onsubmit="return confirm ('Confirmez-vous la suppression?')">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ oiseau.id)}}">
-                        <input type="submit" class="btn btn-danger" value="Supprimer" onsubmit="return confirm ('Confirmez-vous la suppression?')">
+                        <input type="submit" class="btn btn-danger" value="Supprimer">
                     </form>
                 </td>
             </tr>

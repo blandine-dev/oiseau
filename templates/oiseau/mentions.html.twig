@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions légales{% endblock %}
+
+{% block monTitre %}Mentions légales{% endblock %}
+
+{% block body %}
+<div class="row mentions">
+    <div class="col-12">
+        <div class="card border-primary mb-3 mx-auto" style ="max-width:60rem">
+            <div class="card-header text-center bg-warning text-white"> </div>
+            <div class="card-body">
+                <h4>Hébergeur</h4>
+                <p class="textMentions">o2switch </br>222-224 Boulevard Gustave Flaubert </br>63000 Clermont-Ferrand </br/>04 44 44 60 40 </br>Capital de 100000€ <br>Siret 510 909 80700024
+                <br/>
+                <h4>Confidentialité et protection des données</h4>
+                <p class="textMentions">Nous utilisons votre adresse e-mail uniquement pour vous recontacter en cas d'échanges via le lien de contact de l'application. Nous vous assurons qu'aucun échange de données ou partenariat avec des entreprises ne sont réalisés sur ce site.</p>
+                 <h4>Textes et images</h4>
+                <p class="textMentions">
+                L'ensemble des images utilisées sur ce site sont des images libres de droits provenant des sites Pixabay.com, ainsi que des images placées sous Licence Creative Commons provenant de Wikipedia.org et réutilisées selon les termes définis par la licence <a href="https://creativecommons.org/licenses/by-sa/2.0/deed.fr" target="_blank" class="text-decoration-none text-warning">(CC BY-SA 2.0)</a> et n'ont en aucun cas été modifiées.</br>
+                Les articles et logo sont la propriété intellectuelle des auteurs membres d'appli-merle.com. </br>
+                Une autorisation préalable d'<a href="mailto:viry.blandine@gmail.com" class="mail text-decoration-none text-warning" target="_blank">appli-merle.com </a>est nécessaire pour utiliser, modifier, copier, traduire, reproduire, publier, exploiter, vendre, et diffuser dans un format numérique ou autre, tout ou partie des textes de ce site. </p>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<footer class="position-absolute" style="min-height:15%; width:100%;">
+<div class="row justify-content-center text-center mt-3 text-white">
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="contact">
+            <i class="fa fa-envelope"><a href="mailto:viry.blandine@gmail.com" class="mail text-decoration-none text-white"> Contacter le Merle</a></i>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="apropos">
+            <a href="{{path('apropos')}}" class="text-decoration-none text-white">A propos du Merle</a>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="mentions">
+            <a href="{{path('mentions_legales')}}" class="text-decoration-none text-white">Mentions légales</a>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="droit">
+            <p>MERLE, l'application des oiseaux</br> - 2020 - Tous droits réservés</p>
+        </div>
+    </div>
+</div>
+{% block footer %}{% endblock %}</footer> 
+{% endblock %}
