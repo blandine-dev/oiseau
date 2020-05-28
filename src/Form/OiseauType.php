@@ -41,7 +41,8 @@ class OiseauType extends AbstractType
                 'choices'  => [
                     "graines, fruits" => "graines, fruits",
                     "insectes, petits invertébrés" => "insectes, petits invertébrés",
-                    "poissons, batraciens, reptils, crustacés" => "poissons, batraciens, reptils, crustacés",
+                    "poissons, batraciens, reptiles, crustacés" => "poissons, batraciens, reptiles, crustacés",
+                    "végétaux aquatiques, mollusques, insectes"=>"végétaux aquatiques, mollusques, insectes",
                     "petits mammifères, oiseaux, charognes" => "petits mammifères, oiseaux, charognes",
                     "très variée (omnivore)" => "très variée (omnivore)",
                 ],
